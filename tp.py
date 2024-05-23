@@ -72,18 +72,20 @@ def calcular_tiempos(archivos):
 def graficar(tiempos):
     elemento_x = []
     elemento_y = []
-    fig, ax = plt.subplots()
+    #fig, ax = plt.plot(x, y, color='blue', marker='o', linestyle='-')
     # Dibujar puntos
     for elemento in tiempos:
         elemento_x.append(elemento[0])
         elemento_y.append(elemento[1])    
-    ax.scatter(x = elemento_x, y = elemento_y)
+    #ax.scatter(x = elemento_x, y = elemento_y)
+    plt.plot(elemento_x, elemento_y, color='blue', marker='o', linestyle='-')
     plt.ylabel('Tiempo de ejecución')
     plt.xlabel('Input de datos(oleadas de soldados)')
     plt.title('Gráfico oleadas de soldados vs tiempo')
     # Guardar el gráfico en formato png
-    plt.savefig('diagrama-dispersion.png')
+    #plt.savefig('diagrama-dispersion.png')
     # Mostrar el gráfico
+    plt.grid(True)
     plt.show()
 
 def main(archivo):
