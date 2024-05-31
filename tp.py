@@ -72,12 +72,12 @@ def calcular_tiempos(archivos):
 def graficar(tiempos):
     elemento_x = []
     elemento_y = []
-    fig, ax = plt.subplots()
+    ax = plt.subplots()
     # Dibujar puntos
     for elemento in tiempos:
         elemento_x.append(elemento[0])
         elemento_y.append(elemento[1])    
-    ax.scatter(x = elemento_x, y = elemento_y)
+    ax.plot(x = elemento_x, y = elemento_y)
     plt.ylabel('Tiempo de ejecución')
     plt.xlabel('Input de datos(oleadas de soldados)')
     plt.title('Gráfico oleadas de soldados vs tiempo')
